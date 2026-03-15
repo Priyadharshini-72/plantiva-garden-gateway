@@ -23,17 +23,18 @@ const TipsSection = () => {
   const ref = useScrollAnimation();
 
   return (
-    <section className="py-20 sm:py-28 bg-accent/40">
+    <section className="py-20 sm:py-28 bg-accent/30">
       <div className="section-container" ref={ref}>
         <div className="text-center mb-14">
+          <p className="font-body text-sm font-semibold text-primary uppercase tracking-widest mb-3">Learn</p>
           <h2 className="section-title">Gardening Tips</h2>
           <p className="section-subtitle mt-4">Simple advice to keep your plants happy and healthy.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {tips.map((tip) => (
             <div key={tip.title} className="plant-card p-8 text-center">
-              <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
-                <tip.icon className="w-8 h-8 text-primary" />
+              <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
+                <tip.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground mb-3">{tip.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">{tip.desc}</p>

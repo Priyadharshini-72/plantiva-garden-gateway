@@ -64,8 +64,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
-        body: ['Montserrat', 'sans-serif'],
+        display: ['Cormorant Garamond', 'serif'],
+        body: ['Nunito Sans', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {

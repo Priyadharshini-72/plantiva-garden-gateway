@@ -1,42 +1,40 @@
+import { Link } from "react-router-dom";
 import { Leaf } from "lucide-react";
 
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Plants", href: "#plants" },
-  { label: "Flowers", href: "#flowers" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", path: "/" },
+  { label: "Plants", path: "/plants" },
+  { label: "Flowers", path: "/flowers" },
+  { label: "Contact", path: "/contact" },
 ];
 
 const Footer = () => (
-  <footer className="bg-foreground py-12">
+  <footer className="bg-foreground py-14">
     <div className="section-container">
-      <div className="grid sm:grid-cols-3 gap-8 items-start">
-        {/* Logo */}
+      <div className="grid sm:grid-cols-3 gap-10 items-start">
         <div>
-          <a href="#home" className="flex items-center gap-2 mb-4">
-            <Leaf className="w-6 h-6 text-secondary" />
+          <Link to="/" className="flex items-center gap-2 mb-4">
+            <Leaf className="w-5 h-5 text-secondary" />
             <span className="font-display text-xl font-bold text-primary-foreground">Plantiva</span>
-          </a>
-          <p className="font-body text-sm text-primary-foreground/60">
+          </Link>
+          <p className="font-body text-sm text-primary-foreground/50 leading-relaxed">
             Bringing nature closer to you since 2020.
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h4 className="font-display text-lg font-semibold text-primary-foreground mb-4">Quick Links</h4>
           <ul className="space-y-2">
             {quickLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="font-body text-sm text-primary-foreground/60 hover:text-secondary transition-colors">
+              <li key={link.path}>
+                <Link to={link.path} className="font-body text-sm text-primary-foreground/50 hover:text-secondary transition-colors">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Social */}
         <div>
           <h4 className="font-display text-lg font-semibold text-primary-foreground mb-4">Follow Us</h4>
           <div className="flex gap-4">
@@ -44,7 +42,7 @@ const Footer = () => (
               <a
                 key={platform}
                 href="#"
-                className="font-body text-sm text-primary-foreground/60 hover:text-secondary transition-colors"
+                className="font-body text-sm text-primary-foreground/50 hover:text-secondary transition-colors"
               >
                 {platform}
               </a>
@@ -53,8 +51,8 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/10 mt-8 pt-8 text-center">
-        <p className="font-body text-sm text-primary-foreground/40">
+      <div className="border-t border-primary-foreground/10 mt-10 pt-8 text-center">
+        <p className="font-body text-sm text-primary-foreground/35">
           © 2026 Plantiva Botanical Garden. All rights reserved.
         </p>
       </div>

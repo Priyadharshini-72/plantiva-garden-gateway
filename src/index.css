@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,41 +6,41 @@
 
 @layer base {
   :root {
-    --background: 128 14% 97%;
-    --foreground: 153 42% 18%;
+    --background: 40 33% 97%;
+    --foreground: 150 20% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 153 42% 18%;
+    --card: 40 30% 99%;
+    --card-foreground: 150 20% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 153 42% 18%;
+    --popover: 40 30% 99%;
+    --popover-foreground: 150 20% 20%;
 
-    --primary: 153 42% 30%;
-    --primary-foreground: 128 14% 97%;
+    --primary: 152 32% 40%;
+    --primary-foreground: 40 33% 97%;
 
-    --secondary: 152 38% 63%;
-    --secondary-foreground: 153 42% 18%;
+    --secondary: 28 40% 82%;
+    --secondary-foreground: 150 20% 20%;
 
-    --muted: 140 33% 90%;
-    --muted-foreground: 153 20% 40%;
+    --muted: 40 20% 93%;
+    --muted-foreground: 150 10% 45%;
 
-    --accent: 133 53% 90%;
-    --accent-foreground: 153 42% 18%;
+    --accent: 152 20% 90%;
+    --accent-foreground: 150 20% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 140 20% 85%;
-    --input: 140 20% 85%;
-    --ring: 153 42% 30%;
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 152 32% 40%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Montserrat', sans-serif;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Nunito Sans', sans-serif;
 
-    --shadow-card: 0 4px 20px -4px hsl(153 42% 30% / 0.08);
-    --shadow-card-hover: 0 12px 32px -8px hsl(153 42% 30% / 0.15);
+    --shadow-card: 0 2px 16px -4px hsl(150 20% 20% / 0.06);
+    --shadow-card-hover: 0 8px 30px -8px hsl(150 20% 20% / 0.12);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -74,11 +74,11 @@
   }
 
   .glass-overlay {
-    @apply bg-background/70 backdrop-blur-md border border-border/50 rounded-2xl;
+    @apply bg-card/80 backdrop-blur-md border border-border/40 rounded-2xl;
   }
 
   .plant-card {
-    @apply bg-card rounded-2xl overflow-hidden transition-all duration-300;
+    @apply bg-card rounded-2xl overflow-hidden transition-all duration-300 border border-border/50;
     box-shadow: var(--shadow-card);
   }
 
@@ -88,13 +88,17 @@
   }
 
   .section-title {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground tracking-tight;
     font-family: var(--font-display);
   }
 
   .section-subtitle {
     @apply text-lg text-muted-foreground max-w-2xl mx-auto;
     font-family: var(--font-body);
+  }
+
+  .page-wrapper {
+    @apply pt-20;
   }
 }
 

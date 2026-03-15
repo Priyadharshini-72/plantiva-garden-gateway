@@ -1,25 +1,5 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import PlantsSection from "@/components/PlantsSection";
-import FlowersSection from "@/components/FlowersSection";
-import AboutSection from "@/components/AboutSection";
-import TipsSection from "@/components/TipsSection";
-import SubscribeSection from "@/components/SubscribeSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import { Navigate } from "react-router-dom";
 
-const Index = () => (
-  <>
-    <Navbar />
-    <HeroSection />
-    <PlantsSection />
-    <FlowersSection />
-    <AboutSection />
-    <TipsSection />
-    <SubscribeSection />
-    <ContactSection />
-    <Footer />
-  </>
-);
+const Index = () => <Navigate to="/" replace />;
 
 export default Index;

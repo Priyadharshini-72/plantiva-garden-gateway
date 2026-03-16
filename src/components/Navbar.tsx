@@ -4,10 +4,8 @@ import { Leaf, Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Plants", path: "/plants" },
-  { label: "Flowers", path: "/flowers" },
+  { label: "Services", path: "/services" },
   { label: "About Garden", path: "/about" },
-  { label: "Subscribe", path: "/subscribe" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -35,7 +33,6 @@ const Navbar = () => {
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 sm:h-20">
-        {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 group">
           <Leaf className="w-6 h-6 text-primary transition-transform duration-300 group-hover:rotate-12" />
           <span className="font-display text-2xl sm:text-[1.7rem] font-bold text-foreground tracking-tight">
@@ -43,7 +40,6 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
@@ -64,7 +60,6 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground p-2 rounded-lg hover:bg-accent transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -74,7 +69,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-card/98 backdrop-blur-md border-t border-border/50 animate-fade-in-up">
           <ul className="flex flex-col py-3 px-2">

@@ -3,8 +3,8 @@ import { Leaf } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", path: "/" },
-  { label: "Plants", path: "/plants" },
-  { label: "Flowers", path: "/flowers" },
+  { label: "Services", path: "/services" },
+  { label: "About Garden", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -21,7 +21,6 @@ const Footer = () => (
             Bringing nature closer to you since 2020.
           </p>
         </div>
-
         <div>
           <h4 className="font-display text-lg font-semibold text-primary-foreground mb-4">Quick Links</h4>
           <ul className="space-y-2">
@@ -34,23 +33,17 @@ const Footer = () => (
             ))}
           </ul>
         </div>
-
         <div>
           <h4 className="font-display text-lg font-semibold text-primary-foreground mb-4">Follow Us</h4>
           <div className="flex gap-4">
             {["Facebook", "Instagram", "Twitter"].map((platform) => (
-              <a
-                key={platform}
-                href="#"
-                className="font-body text-sm text-primary-foreground/50 hover:text-secondary transition-colors"
-              >
+              <a key={platform} href="#" className="font-body text-sm text-primary-foreground/50 hover:text-secondary transition-colors">
                 {platform}
               </a>
             ))}
           </div>
         </div>
       </div>
-
       <div className="border-t border-primary-foreground/10 mt-10 pt-8 text-center">
         <p className="font-body text-sm text-primary-foreground/35">
           © 2026 Plantiva Botanical Garden. All rights reserved.

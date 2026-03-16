@@ -89,8 +89,9 @@ const Services = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {flowers.map((flower) => (
               <div key={flower.name} className="plant-card group">
-                <div className="overflow-hidden">
+                <div className="relative overflow-hidden">
                   <img src={flower.image} alt={flower.name} className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <span className="absolute top-3 right-3 bg-card/90 backdrop-blur-sm text-foreground text-sm font-bold px-3 py-1 rounded-full">{flower.price}</span>
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1">{flower.name}</h3>

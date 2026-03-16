@@ -108,6 +108,53 @@ const Contact = () => {
                   Send Message
                 </Button>
               </form>
+
+              {/* Separate Subscribe Button */}
+              <div className="mt-8 pt-8 border-t border-border/50">
+                {!showSubscribeForm ? (
+                  <div className="text-center">
+                    <p className="font-body text-sm text-muted-foreground mb-3">Want to receive updates and exclusive offers?</p>
+                    <Button 
+                      type="button" 
+                      variant="outline" 
+                      size="lg" 
+                      className="rounded-full w-full h-12 text-base font-semibold"
+                      onClick={() => setShowSubscribeForm(true)}
+                    >
+                      Subscribe to Our Newsletter
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubscribe} className="space-y-4">
+                    <h3 className="font-display text-lg font-semibold text-foreground">Subscribe for Updates</h3>
+                    <p className="font-body text-sm text-muted-foreground">Get the latest plants, offers & gardening tips delivered to your inbox.</p>
+                    <div>
+                      <label className="font-body text-sm font-medium text-foreground mb-1.5 block">Email Address</label>
+                      <Input
+                        type="email"
+                        placeholder="Enter your email for subscription"
+                        value={subscribeEmail}
+                        onChange={(e) => setSubscribeEmail(e.target.value)}
+                        required
+                        className="rounded-xl h-12 px-4 bg-background"
+                      />
+                    </div>
+                    <div className="flex gap-3">
+                      <Button 
+                        type="button" 
+                        variant="ghost" 
+                        className="flex-1 rounded-full h-12"
+                        onClick={() => setShowSubscribeForm(false)}
+                      >
+                        Cancel
+                      </Button>
+                      <Button type="submit" className="flex-1 rounded-full h-12 text-base font-semibold">
+                        Subscribe
+                      </Button>
+                    </div>
+                  </form>
+                )}
+              </div>
             </div>
 
             {/* Contact Info & Map */}

@@ -18,6 +18,8 @@ const Contact = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [subscribe, setSubscribe] = useState(false);
+  const [subscribeEmail, setSubscribeEmail] = useState("");
+  const [showSubscribeForm, setShowSubscribeForm] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

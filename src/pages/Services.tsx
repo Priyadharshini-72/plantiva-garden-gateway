@@ -18,10 +18,10 @@ const plants = [
 ];
 
 const flowers = [
-  { name: "Rose", image: roseImg, desc: "The timeless symbol of love, available in red, white, pink & yellow." },
-  { name: "Lily", image: lilyImg, desc: "Elegant white blooms that bring grace and fragrance to any space." },
-  { name: "Jasmine", image: jasmineImg, desc: "Delicate, intensely fragrant flowers perfect for gardens and garlands." },
-  { name: "Sunflower", image: sunflowerImg, desc: "Bright, cheerful blooms that follow the sun and light up any garden." },
+  { name: "Rose", image: roseImg, desc: "The timeless symbol of love, available in red, white, pink & yellow.", price: "₹49/stem" },
+  { name: "Lily", image: lilyImg, desc: "Elegant white blooms that bring grace and fragrance to any space.", price: "₹89/bunch" },
+  { name: "Jasmine", image: jasmineImg, desc: "Delicate, intensely fragrant flowers perfect for gardens and garlands.", price: "₹39/bunch" },
+  { name: "Sunflower", image: sunflowerImg, desc: "Bright, cheerful blooms that follow the sun and light up any garden.", price: "₹59/stem" },
 ];
 
 const tips = [
@@ -89,8 +89,9 @@ const Services = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {flowers.map((flower) => (
               <div key={flower.name} className="plant-card group">
-                <div className="overflow-hidden">
+                <div className="relative overflow-hidden">
                   <img src={flower.image} alt={flower.name} className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <span className="absolute top-3 right-3 bg-card/90 backdrop-blur-sm text-foreground text-sm font-bold px-3 py-1 rounded-full">{flower.price}</span>
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1">{flower.name}</h3>

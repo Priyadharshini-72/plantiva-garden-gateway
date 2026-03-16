@@ -35,6 +35,18 @@ const Contact = () => {
     }
   };
 
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (subscribeEmail) {
+      toast({
+        title: "Subscribed!",
+        description: "Thank you for subscribing to Plantiva updates and offers 🌿",
+      });
+      setSubscribeEmail("");
+      setShowSubscribeForm(false);
+    }
+  };
+
   return (
     <div className="page-wrapper">
       <section className="py-16 sm:py-24 bg-background">

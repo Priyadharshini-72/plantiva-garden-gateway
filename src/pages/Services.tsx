@@ -18,10 +18,10 @@ const plants = [
 ];
 
 const flowers = [
-  { name: "Rose", image: roseImg, desc: "The timeless symbol of love, available in red, white, pink & yellow." },
-  { name: "Lily", image: lilyImg, desc: "Elegant white blooms that bring grace and fragrance to any space." },
-  { name: "Jasmine", image: jasmineImg, desc: "Delicate, intensely fragrant flowers perfect for gardens and garlands." },
-  { name: "Sunflower", image: sunflowerImg, desc: "Bright, cheerful blooms that follow the sun and light up any garden." },
+  { name: "Rose", image: roseImg, desc: "The timeless symbol of love, available in red, white, pink & yellow.", price: "₹49/stem" },
+  { name: "Lily", image: lilyImg, desc: "Elegant white blooms that bring grace and fragrance to any space.", price: "₹89/bunch" },
+  { name: "Jasmine", image: jasmineImg, desc: "Delicate, intensely fragrant flowers perfect for gardens and garlands.", price: "₹39/bunch" },
+  { name: "Sunflower", image: sunflowerImg, desc: "Bright, cheerful blooms that follow the sun and light up any garden.", price: "₹59/stem" },
 ];
 
 const tips = [

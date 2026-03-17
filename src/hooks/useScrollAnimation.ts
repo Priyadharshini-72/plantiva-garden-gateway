@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export const useScrollAnimation = () => {
+export const useScrollAnimation = (delay = 0) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -8,8 +8,8 @@ export const useScrollAnimation = () => {
     if (!el) return;
 
     el.style.opacity = "0";
-    el.style.transform = "translateY(24px)";
-    el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+    el.style.transform = "translateY(32px)";
+    el.style.transition = `opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -19,12 +19,12 @@ export const useScrollAnimation = () => {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [delay]);
 
   return ref;
 };

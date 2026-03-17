@@ -26,31 +26,31 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-sm border-b border-border/50"
-          : "bg-card/80 backdrop-blur-sm"
+          ? "bg-card/95 backdrop-blur-lg shadow-md border-b border-border/40"
+          : "bg-card/70 backdrop-blur-sm"
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 sm:h-20">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <Leaf className="w-6 h-6 text-primary transition-transform duration-300 group-hover:rotate-12" />
-          <span className="font-display text-2xl sm:text-[1.7rem] font-bold text-foreground tracking-tight">
+          <Leaf className="w-6 h-6 text-primary transition-transform duration-500 group-hover:rotate-12" />
+          <span className="font-display text-2xl sm:text-[1.75rem] font-bold text-foreground tracking-tight">
             Plantiva
           </span>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden md:flex items-center gap-1.5">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
             return (
               <li key={link.path}>
                 <Link
                   to={link.path}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                  className={`px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 ${
                     isActive
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground/70 hover:text-foreground hover:bg-accent"
+                      ? "bg-primary text-primary-foreground shadow-md"
+                      : "text-foreground/80 hover:text-foreground hover:bg-accent"
                   }`}
                 >
                   {link.label}
@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-card/98 backdrop-blur-md border-t border-border/50 animate-fade-in-up">
+        <div className="md:hidden bg-card/98 backdrop-blur-lg border-t border-border/40 animate-fade-in-up">
           <ul className="flex flex-col py-3 px-2">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
@@ -78,10 +78,10 @@ const Navbar = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className={`block px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
+                    className={`block px-4 py-3 rounded-xl text-sm font-bold tracking-wide transition-colors ${
                       isActive
                         ? "bg-primary text-primary-foreground"
-                        : "text-foreground/70 hover:text-foreground hover:bg-accent"
+                        : "text-foreground/80 hover:text-foreground hover:bg-accent"
                     }`}
                   >
                     {link.label}

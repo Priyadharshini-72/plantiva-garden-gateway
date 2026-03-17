@@ -51,11 +51,13 @@ const Contact = () => {
   return (
     <div className="page-wrapper">
       {/* Hero */}
-      <section className="gradient-section py-12 sm:py-16">
-        <div className="section-container text-center" ref={heroRef}>
-          <p className="font-body text-sm font-bold text-primary uppercase tracking-widest mb-3">Get in Touch</p>
-          <h1 className="section-title">Contact & Subscribe</h1>
-          <p className="section-subtitle mt-4">Have a question or want to stay updated? Reach out to us or subscribe for the latest from Plantiva.</p>
+      <section className="relative py-16 sm:py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-foreground" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
+        <div className="section-container text-center relative z-10" ref={heroRef}>
+          <p className="font-body text-sm font-bold text-secondary uppercase tracking-widest mb-3">Get in Touch</p>
+          <h1 className="section-title text-primary-foreground">Contact & Subscribe</h1>
+          <p className="section-subtitle text-primary-foreground/65 mt-4">Have a question or want to stay updated? Reach out to us or subscribe for the latest from Plantiva.</p>
         </div>
       </section>
 

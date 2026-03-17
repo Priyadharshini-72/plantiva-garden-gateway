@@ -49,8 +49,8 @@ const Navbar = () => {
                   to={link.path}
                   className={`px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 ${
                     isActive
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "text-foreground/80 hover:text-foreground hover:bg-accent"
+                      ? "bg-foreground text-primary-foreground shadow-md"
+                      : "text-foreground/80 hover:text-foreground hover:bg-foreground/10"
                   }`}
                 >
                   {link.label}
@@ -80,8 +80,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`block px-4 py-3 rounded-xl text-sm font-bold tracking-wide transition-colors ${
                       isActive
-                        ? "bg-primary text-primary-foreground"
-                        : "text-foreground/80 hover:text-foreground hover:bg-accent"
+                        ? "bg-foreground text-primary-foreground"
+                        : "text-foreground/80 hover:text-foreground hover:bg-foreground/10"
                     }`}
                   >
                     {link.label}

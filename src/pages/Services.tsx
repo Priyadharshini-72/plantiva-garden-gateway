@@ -32,16 +32,17 @@ const tips = [
 ];
 
 const Services = () => {
+  const heroRef = useScrollAnimation();
   const plantsRef = useScrollAnimation();
-  const flowersRef = useScrollAnimation();
+  const flowersRef = useScrollAnimation(100);
   const tipsRef = useScrollAnimation();
 
   return (
     <div className="page-wrapper">
       {/* Hero banner */}
-      <section className="py-16 sm:py-20 bg-accent/30">
-        <div className="section-container text-center">
-          <p className="font-body text-sm font-semibold text-primary uppercase tracking-widest mb-3">What We Offer</p>
+      <section className="gradient-section py-12 sm:py-16">
+        <div className="section-container text-center" ref={heroRef}>
+          <p className="font-body text-sm font-bold text-primary uppercase tracking-widest mb-3">What We Offer</p>
           <h1 className="section-title mb-4">Our Services & Collection</h1>
           <p className="section-subtitle">Explore our wide range of indoor plants, fresh flowers, and expert gardening guidance.</p>
         </div>
@@ -52,22 +53,23 @@ const Services = () => {
         <div className="section-container" ref={plantsRef}>
           <div className="flex items-center gap-3 mb-2">
             <Sprout className="w-6 h-6 text-primary" />
-            <p className="font-body text-sm font-semibold text-primary uppercase tracking-widest">Indoor & Outdoor</p>
+            <p className="font-body text-sm font-bold text-primary uppercase tracking-widest">Indoor & Outdoor</p>
           </div>
           <h2 className="section-title text-left mb-4">Plants Available</h2>
-          <p className="font-body text-muted-foreground text-lg mb-10 max-w-2xl">
+          <p className="font-body text-foreground/70 text-lg mb-10 max-w-2xl">
             From air-purifying houseplants to medicinal herbs, find the perfect green companion for your home or office.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {plants.map((plant) => (
-              <div key={plant.name} className="plant-card group">
+            {plants.map((plant, i) => (
+              <div key={plant.name} className="plant-card group" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="relative overflow-hidden">
-                  <img src={plant.image} alt={plant.name} className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <span className="absolute top-3 right-3 bg-card/90 backdrop-blur-sm text-foreground text-sm font-bold px-3 py-1 rounded-full">{plant.price}</span>
+                  <img src={plant.image} alt={plant.name} className="w-full h-60 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <span className="absolute top-3 right-3 bg-card/90 backdrop-blur-sm text-foreground text-sm font-bold px-3 py-1.5 rounded-full shadow-sm">{plant.price}</span>
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1">{plant.name}</h3>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed">{plant.desc}</p>
+                  <p className="font-body text-sm text-foreground/60 leading-relaxed">{plant.desc}</p>
                 </div>
               </div>
             ))}
@@ -76,26 +78,27 @@ const Services = () => {
       </section>
 
       {/* Flowers */}
-      <section className="py-16 sm:py-24 bg-accent/20">
+      <section className="py-16 sm:py-24 gradient-section">
         <div className="section-container" ref={flowersRef}>
           <div className="flex items-center gap-3 mb-2">
             <Flower2 className="w-6 h-6 text-primary" />
-            <p className="font-body text-sm font-semibold text-primary uppercase tracking-widest">Fresh & Seasonal</p>
+            <p className="font-body text-sm font-bold text-primary uppercase tracking-widest">Fresh & Seasonal</p>
           </div>
           <h2 className="section-title text-left mb-4">Flowers Collection</h2>
-          <p className="font-body text-muted-foreground text-lg mb-10 max-w-2xl">
+          <p className="font-body text-foreground/70 text-lg mb-10 max-w-2xl">
             Browse our selection of garden-fresh flowers — perfect for gifting, decoration, or adding color to your garden.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {flowers.map((flower) => (
-              <div key={flower.name} className="plant-card group">
+            {flowers.map((flower, i) => (
+              <div key={flower.name} className="plant-card group" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="relative overflow-hidden">
-                  <img src={flower.image} alt={flower.name} className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <span className="absolute top-3 right-3 bg-card/90 backdrop-blur-sm text-foreground text-sm font-bold px-3 py-1 rounded-full">{flower.price}</span>
+                  <img src={flower.image} alt={flower.name} className="w-full h-60 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-sm font-bold px-3 py-1.5 rounded-full shadow-md">{flower.price}</span>
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1">{flower.name}</h3>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed">{flower.desc}</p>
+                  <p className="font-body text-sm text-foreground/60 leading-relaxed">{flower.desc}</p>
                 </div>
               </div>
             ))}
@@ -108,24 +111,24 @@ const Services = () => {
         <div className="section-container" ref={tipsRef}>
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
-              <p className="font-body text-sm font-semibold text-primary uppercase tracking-widest mb-3">Expert Advice</p>
+              <p className="font-body text-sm font-bold text-primary uppercase tracking-widest mb-3">Expert Advice</p>
               <h2 className="section-title text-left mb-8">Gardening Tips</h2>
               <div className="space-y-6">
-                {tips.map((tip) => (
-                  <div key={tip.title} className="flex gap-4 items-start">
-                    <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                {tips.map((tip, i) => (
+                  <div key={tip.title} className="flex gap-4 items-start p-4 rounded-xl hover:bg-accent/50 transition-all duration-300" style={{ transitionDelay: `${i * 50}ms` }}>
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <tip.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-display text-lg font-semibold text-foreground mb-1">{tip.title}</h3>
-                      <p className="font-body text-sm text-muted-foreground leading-relaxed">{tip.desc}</p>
+                      <p className="font-body text-sm text-foreground/60 leading-relaxed">{tip.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={gardeningImg} alt="Gardening hands planting seedlings" className="w-full h-[450px] object-cover" loading="lazy" />
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img src={gardeningImg} alt="Gardening hands planting seedlings" className="w-full h-[450px] object-cover transition-transform duration-700 hover:scale-105" loading="lazy" />
             </div>
           </div>
         </div>

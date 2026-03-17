@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Leaf, ArrowRight, Sprout, Sun, Droplets } from "lucide-react";
+import { Leaf, ArrowRight, Sprout, Sun, Droplets, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import plantCollection from "@/assets/plant-collection.jpg";
 import roseImg from "@/assets/rose.jpg";
@@ -29,66 +29,70 @@ const Home = () => {
 
   return (
     <>
-      {/* Hero — no box, elegant full-screen */}
+      {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20">
         <img
           src={heroBg}
           alt="Lush botanical garden"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-105"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-foreground/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-foreground/70" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-5 py-2 mb-8">
-            <Leaf className="w-4 h-4 text-primary-foreground" />
-            <span className="font-body text-sm text-primary-foreground/90 tracking-wide">Botanical Garden & Plant Shop</span>
+          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/15 rounded-full px-6 py-2.5 mb-8 animate-fade-in">
+            <Leaf className="w-4 h-4 text-secondary" />
+            <span className="font-body text-sm text-primary-foreground/90 tracking-wider font-medium">Botanical Garden & Plant Shop</span>
           </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] tracking-tight mb-6">
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold text-primary-foreground leading-[1.05] tracking-tight mb-6 animate-slide-up">
             Where Nature
             <br />
-            <span className="italic font-light">Meets You</span>
+            <span className="italic font-light text-secondary">Meets You</span>
           </h1>
-          <p className="font-body text-lg sm:text-xl text-primary-foreground/80 max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="font-body text-lg sm:text-xl text-primary-foreground/75 max-w-xl mx-auto mb-12 leading-relaxed animate-fade-in" style={{ animationDelay: "0.3s" }}>
             Discover the beauty of over 500 plant species. Visit our garden, shop your favorites, and bring nature home.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="rounded-full px-8 h-13 text-base">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            <Button size="lg" asChild className="rounded-full px-10 h-14 text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-primary border-0">
               <Link to="/services">
-                Explore Our Collection <ArrowRight className="w-4 h-4 ml-2" />
+                Explore Collection <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="rounded-full px-8 h-13 text-base bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground">
+            <Button size="lg" asChild className="rounded-full px-10 h-14 text-base font-bold bg-primary-foreground/10 backdrop-blur-md border-2 border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/20 hover:border-primary-foreground/40 transition-all duration-300 hover:scale-105">
               <Link to="/contact">Get in Touch</Link>
             </Button>
           </div>
         </div>
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-6 h-6 text-primary-foreground/50" />
+        </div>
+        {/* Bottom gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* About preview */}
       <section className="py-20 sm:py-28 bg-background">
         <div className="section-container" ref={aboutRef}>
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
                 src={plantCollection}
                 alt="Plantiva plant shop collection"
-                className="w-full h-[400px] object-cover"
+                className="w-full h-[420px] object-cover transition-transform duration-700 hover:scale-105"
                 loading="lazy"
               />
             </div>
             <div>
-              <p className="font-body text-sm font-semibold text-primary uppercase tracking-widest mb-3">Welcome to Plantiva</p>
+              <p className="font-body text-sm font-bold text-primary uppercase tracking-widest mb-3">Welcome to Plantiva</p>
               <h2 className="section-title text-left mb-6">Your Gateway to a Greener World</h2>
-              <p className="font-body text-muted-foreground leading-relaxed text-lg mb-4">
+              <p className="font-body text-foreground/75 leading-relaxed text-lg mb-4">
                 Plantiva Botanical Garden is more than just a garden — it's a living experience. Walk through lush pathways,
                 discover exotic species, and find the perfect plant to brighten your space.
               </p>
-              <p className="font-body text-muted-foreground leading-relaxed text-lg mb-8">
+              <p className="font-body text-foreground/75 leading-relaxed text-lg mb-8">
                 From ornamental flowers to air-purifying indoor plants, our curated collection caters to every plant lover.
               </p>
-              <Button variant="outline" asChild className="rounded-full">
+              <Button variant="outline" asChild className="rounded-full px-8 h-12 font-bold border-2 hover:scale-105 transition-all duration-300">
                 <Link to="/about">Learn More About Us</Link>
               </Button>
             </div>
@@ -97,20 +101,20 @@ const Home = () => {
       </section>
 
       {/* Highlights */}
-      <section className="py-20 sm:py-24 bg-accent/30">
+      <section className="py-20 sm:py-24 gradient-section">
         <div className="section-container" ref={highlightRef}>
           <div className="text-center mb-14">
-            <p className="font-body text-sm font-semibold text-primary uppercase tracking-widest mb-3">Why Plantiva</p>
+            <p className="font-body text-sm font-bold text-primary uppercase tracking-widest mb-3">Why Plantiva</p>
             <h2 className="section-title">What Makes Us Special</h2>
           </div>
           <div className="grid sm:grid-cols-3 gap-8">
-            {highlights.map((item) => (
-              <div key={item.title} className="text-center p-8 rounded-2xl bg-card border border-border/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mx-auto mb-5">
-                  <item.icon className="w-6 h-6 text-primary" />
+            {highlights.map((item, i) => (
+              <div key={item.title} className="text-center p-8 rounded-2xl bg-card border border-border/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2" style={{ transitionDelay: `${i * 100}ms` }}>
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                  <item.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">{item.title}</h3>
-                <p className="font-body text-muted-foreground leading-relaxed">{item.desc}</p>
+                <p className="font-body text-foreground/65 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -121,7 +125,7 @@ const Home = () => {
       <section className="py-20 sm:py-28 bg-background">
         <div className="section-container" ref={featuredRef}>
           <div className="text-center mb-14">
-            <p className="font-body text-sm font-semibold text-primary uppercase tracking-widest mb-3">Featured</p>
+            <p className="font-body text-sm font-bold text-primary uppercase tracking-widest mb-3">Featured</p>
             <h2 className="section-title">Popular Plants & Flowers</h2>
             <p className="section-subtitle mt-4">Hand-picked favorites from our collection that customers love.</p>
           </div>
@@ -132,10 +136,11 @@ const Home = () => {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <span className="absolute top-3 left-3 bg-primary/90 text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <span className="absolute top-3 left-3 bg-primary/90 text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
                     {item.tag}
                   </span>
                 </div>
@@ -145,8 +150,8 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Button variant="outline" asChild className="rounded-full">
+          <div className="text-center mt-12">
+            <Button variant="outline" asChild className="rounded-full px-8 h-12 font-bold border-2 hover:scale-105 transition-all duration-300">
               <Link to="/services">View All Collection <ArrowRight className="w-4 h-4 ml-2" /></Link>
             </Button>
           </div>

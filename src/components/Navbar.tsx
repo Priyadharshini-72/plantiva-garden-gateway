@@ -49,8 +49,8 @@ const Navbar = () => {
                   to={link.path}
                   className={`px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 ${
                     isActive
-                      ? "bg-primary-foreground text-primary shadow-md"
-                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/15"
+                      ? "bg-primary text-primary-foreground shadow-md"
+                      : "text-foreground/70 hover:text-primary hover:bg-primary/10"
                   }`}
                 >
                   {link.label}

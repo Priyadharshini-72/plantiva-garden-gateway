@@ -28,8 +28,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-primary/95 backdrop-blur-lg shadow-lg border-b border-primary-foreground/10"
-          : "bg-primary/85 backdrop-blur-sm"
+          ? "bg-background backdrop-blur-lg shadow-lg border-b border-border"
+          : "bg-background/95 backdrop-blur-sm"
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 sm:h-20">

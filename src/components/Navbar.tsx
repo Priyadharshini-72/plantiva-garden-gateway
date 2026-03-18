@@ -61,7 +61,7 @@ const Navbar = () => {
         </ul>
 
         <button
-          className="md:hidden text-primary-foreground p-2 rounded-lg hover:bg-primary-foreground/15 transition-colors"
+          className="md:hidden text-primary p-2 rounded-lg hover:bg-primary/10 transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >

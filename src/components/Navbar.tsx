@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-primary/98 backdrop-blur-lg border-t border-primary-foreground/10 animate-fade-in-up">
+        <div className="md:hidden bg-background backdrop-blur-lg border-t border-border animate-fade-in-up">
           <ul className="flex flex-col py-3 px-2">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;

@@ -80,8 +80,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`block px-4 py-3 rounded-xl text-sm font-bold tracking-wide transition-colors ${
                       isActive
-                        ? "bg-primary-foreground text-primary"
-                        : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/15"
+                        ? "bg-primary text-primary-foreground"
+                        : "text-foreground/70 hover:text-primary hover:bg-primary/10"
                     }`}
                   >
                     {link.label}

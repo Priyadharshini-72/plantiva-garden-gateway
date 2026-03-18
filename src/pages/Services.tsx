@@ -40,11 +40,14 @@ const Services = () => {
   return (
     <div>
       {/* Hero banner */}
-      <section className="gradient-section py-12 sm:py-16">
-        <div className="section-container text-center" ref={heroRef}>
-          <p className="font-body text-sm font-bold text-primary uppercase tracking-widest mb-3">What We Offer</p>
-          <h1 className="section-title mb-4">Our Services & Collection</h1>
-          <p className="section-subtitle">Explore our wide range of indoor plants, fresh flowers, and expert gardening guidance.</p>
+      <section className="gradient-section py-20 sm:py-28 lg:py-32">
+        <div className="section-container text-center max-w-3xl mx-auto" ref={heroRef}>
+          <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-5 py-2 mb-6">
+            <Sprout className="w-4 h-4 text-primary" />
+            <span className="font-body text-sm font-bold text-primary uppercase tracking-widest">What We Offer</span>
+          </div>
+          <h1 className="section-title mb-5 text-4xl sm:text-5xl lg:text-6xl">Our Services & Collection</h1>
+          <p className="section-subtitle text-lg sm:text-xl leading-relaxed">Explore our wide range of indoor plants, fresh flowers, and expert gardening guidance.</p>
         </div>
       </section>
 

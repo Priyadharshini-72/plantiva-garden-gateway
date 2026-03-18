@@ -21,11 +21,14 @@ const About = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="gradient-section py-12 sm:py-16">
-        <div className="section-container text-center" ref={heroRef}>
-          <p className="font-body text-sm font-bold text-primary uppercase tracking-widest mb-3">Our Story</p>
-          <h1 className="section-title">About Plantiva Garden</h1>
-          <p className="section-subtitle mt-4">A living sanctuary where nature, community, and sustainability come together.</p>
+      <section className="gradient-section py-20 sm:py-28 lg:py-32">
+        <div className="section-container text-center max-w-3xl mx-auto" ref={heroRef}>
+          <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-5 py-2 mb-6">
+            <Leaf className="w-4 h-4 text-primary" />
+            <span className="font-body text-sm font-bold text-primary uppercase tracking-widest">Our Story</span>
+          </div>
+          <h1 className="section-title text-4xl sm:text-5xl lg:text-6xl">About Plantiva Garden</h1>
+          <p className="section-subtitle mt-5 text-lg sm:text-xl leading-relaxed">A living sanctuary where nature, community, and sustainability come together.</p>
         </div>
       </section>
 

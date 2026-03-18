@@ -34,8 +34,8 @@ const Navbar = () => {
     >
       <div className="section-container flex items-center justify-between h-16 sm:h-20">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <Leaf className="w-6 h-6 text-primary transition-transform duration-500 group-hover:rotate-12" />
-          <span className="font-display text-2xl sm:text-[1.75rem] font-bold text-foreground tracking-tight">
+          <Leaf className="w-6 h-6 text-primary-foreground transition-transform duration-500 group-hover:rotate-12" />
+          <span className="font-display text-2xl sm:text-[1.75rem] font-bold text-primary-foreground tracking-tight">
             Plantiva
           </span>
         </Link>

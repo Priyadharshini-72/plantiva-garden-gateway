@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 45 30% 96%;
-    --foreground: 150 25% 15%;
+    --background: 150 20% 97%;
+    --foreground: 169 34% 15%;
 
-    --card: 45 25% 98%;
-    --card-foreground: 150 25% 15%;
+    --card: 150 18% 98%;
+    --card-foreground: 169 34% 15%;
 
-    --popover: 45 25% 98%;
-    --popover-foreground: 150 25% 15%;
+    --popover: 150 18% 98%;
+    --popover-foreground: 169 34% 15%;
 
-    --primary: 152 35% 35%;
-    --primary-foreground: 45 30% 97%;
+    --primary: 157 30% 38%;
+    --primary-foreground: 156 44% 96%;
 
-    --secondary: 28 35% 78%;
-    --secondary-foreground: 150 25% 15%;
+    --secondary: 154 25% 72%;
+    --secondary-foreground: 169 34% 15%;
 
-    --muted: 45 18% 91%;
-    --muted-foreground: 150 12% 38%;
+    --muted: 156 15% 92%;
+    --muted-foreground: 168 15% 38%;
 
-    --accent: 152 18% 88%;
-    --accent-foreground: 150 25% 15%;
+    --accent: 156 20% 90%;
+    --accent-foreground: 169 34% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 45 12% 85%;
-    --input: 45 12% 85%;
-    --ring: 152 35% 35%;
+    --border: 155 12% 86%;
+    --input: 155 12% 86%;
+    --ring: 157 30% 38%;
 
     --radius: 0.75rem;
 
     --font-display: 'Cormorant Garamond', serif;
     --font-body: 'Nunito Sans', sans-serif;
 
-    --shadow-card: 0 2px 16px -4px hsl(150 20% 15% / 0.07);
-    --shadow-card-hover: 0 12px 36px -8px hsl(150 20% 15% / 0.14);
+    --shadow-card: 0 2px 16px -4px hsl(157 20% 15% / 0.07);
+    --shadow-card-hover: 0 12px 36px -8px hsl(157 20% 15% / 0.14);
 
-    --gradient-hero: linear-gradient(135deg, hsl(152 30% 92%), hsl(45 30% 94%));
-    --gradient-section: linear-gradient(180deg, hsl(152 20% 94%), hsl(45 25% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(156 30% 93%), hsl(154 20% 88%));
+    --gradient-section: linear-gradient(180deg, hsl(156 25% 94%), hsl(154 18% 90%));
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -101,7 +101,7 @@
   }
 
   .page-wrapper {
-    @apply pt-20;
+    @apply pt-16 sm:pt-20;
   }
 
   .page-hero {

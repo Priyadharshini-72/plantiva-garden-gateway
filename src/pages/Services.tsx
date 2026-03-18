@@ -38,7 +38,7 @@ const Services = () => {
   const tipsRef = useScrollAnimation();
 
   return (
-    <div className="page-wrapper">
+    <div>
       {/* Hero banner */}
       <section className="gradient-section py-12 sm:py-16">
         <div className="section-container text-center" ref={heroRef}>

@@ -28,14 +28,14 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-card/95 backdrop-blur-lg shadow-md border-b border-border/40"
-          : "bg-card/70 backdrop-blur-sm"
+          ? "bg-primary/95 backdrop-blur-lg shadow-lg border-b border-primary-foreground/10"
+          : "bg-primary/85 backdrop-blur-sm"
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 sm:h-20">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <Leaf className="w-6 h-6 text-primary transition-transform duration-500 group-hover:rotate-12" />
-          <span className="font-display text-2xl sm:text-[1.75rem] font-bold text-foreground tracking-tight">
+          <Leaf className="w-6 h-6 text-primary-foreground transition-transform duration-500 group-hover:rotate-12" />
+          <span className="font-display text-2xl sm:text-[1.75rem] font-bold text-primary-foreground tracking-tight">
             Plantiva
           </span>
         </Link>
@@ -49,8 +49,8 @@ const Navbar = () => {
                   to={link.path}
                   className={`px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 ${
                     isActive
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "text-foreground/80 hover:text-foreground hover:bg-accent"
+                      ? "bg-primary-foreground text-primary shadow-md"
+                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/15"
                   }`}
                 >
                   {link.label}
@@ -61,7 +61,7 @@ const Navbar = () => {
         </ul>
 
         <button
-          className="md:hidden text-foreground p-2 rounded-lg hover:bg-accent transition-colors"
+          className="md:hidden text-primary-foreground p-2 rounded-lg hover:bg-primary-foreground/15 transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-card/98 backdrop-blur-lg border-t border-border/40 animate-fade-in-up">
+        <div className="md:hidden bg-primary/98 backdrop-blur-lg border-t border-primary-foreground/10 animate-fade-in-up">
           <ul className="flex flex-col py-3 px-2">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
@@ -80,8 +80,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`block px-4 py-3 rounded-xl text-sm font-bold tracking-wide transition-colors ${
                       isActive
-                        ? "bg-primary text-primary-foreground"
-                        : "text-foreground/80 hover:text-foreground hover:bg-accent"
+                        ? "bg-primary-foreground text-primary"
+                        : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/15"
                     }`}
                   >
                     {link.label}

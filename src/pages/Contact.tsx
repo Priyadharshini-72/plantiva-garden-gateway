@@ -18,22 +18,55 @@ const Contact = () => {
   const heroRef = useScrollAnimation();
   const ref = useScrollAnimation();
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", artworkType: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [subscribe, setSubscribe] = useState(false);
   const [subscribeEmail, setSubscribeEmail] = useState("");
   const [showSubscribeForm, setShowSubscribeForm] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const SERVICE_ID = "service_spc8739";
+  const ADMIN_TEMPLATE_ID = "template_ub95iyg";
+  const USER_TEMPLATE_ID = "template_1nwxk99";
+  const PUBLIC_KEY = "dZCiJoR3JdD0exoZl";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (form.name && form.email) {
+    if (!form.name || !form.email) return;
+
+    setIsSubmitting(true);
+
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      artworkType: form.artworkType,
+      message: form.message,
+    };
+
+    try {
+      // Send admin notification email
+      await emailjs.send(SERVICE_ID, ADMIN_TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+      // Send auto-reply to user
+      await emailjs.send(SERVICE_ID, USER_TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
       toast({
         title: subscribe ? "Message Sent & Subscribed!" : "Message Sent!",
         description: subscribe
-          ? "Thank you for reaching out and subscribing to Plantiva updates 🌿"
-          : "Thank you for reaching out. We'll get back to you soon 🌿",
+          ? "Thank you for reaching out and subscribing to updates 🎨"
+          : "Thank you for reaching out. We'll get back to you within 24–48 hours 🎨",
       });
-      setForm({ name: "", email: "", message: "" });
+
+      setForm({ name: "", email: "", artworkType: "", message: "" });
       setSubscribe(false);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

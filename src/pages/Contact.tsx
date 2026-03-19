@@ -38,7 +38,7 @@ const Contact = () => {
     const templateParams = {
       name: form.name,
       email: form.email,
-      artworkType: form.artworkType,
+      plantType: form.plantType,
       message: form.message,
     };
 

@@ -8,9 +8,9 @@ import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
 
 const contactInfo = [
-  { icon: MapPin, label: "Address", value: "123 Garden Lane, Green Valley, Bengaluru 560001" },
+  { icon: MapPin, label: "Address", value: "Moolaikaraipatti, Tirunelveli" },
   { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-  { icon: Mail, label: "Email", value: "hello@plantiva.in" },
+  { icon: Mail, label: "Email", value: "plantiva.green@gmail.com" },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9 AM – 7 PM | Sun: 10 AM – 5 PM" },
 ];
 

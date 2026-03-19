@@ -53,7 +53,7 @@ const Footer = () => (
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <MapPin className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
-              <span className="font-body text-sm text-primary-foreground/55">123 Garden Lane, Green Valley, Bengaluru</span>
+              <span className="font-body text-sm text-primary-foreground/55">Moolaikaraipatti, Tirunelveli</span>
             </li>
             <li className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-secondary flex-shrink-0" />
@@ -61,7 +61,7 @@ const Footer = () => (
             </li>
             <li className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-secondary flex-shrink-0" />
-              <span className="font-body text-sm text-primary-foreground/55">hello@plantiva.in</span>
+              <span className="font-body text-sm text-primary-foreground/55">plantiva.green@gmail.com</span>
             </li>
           </ul>
         </div>

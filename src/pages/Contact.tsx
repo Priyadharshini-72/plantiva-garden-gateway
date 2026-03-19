@@ -155,8 +155,8 @@ const Contact = () => {
                     Subscribe to receive updates about new plants, offers & gardening tips
                   </span>
                 </label>
-                <Button type="submit" size="lg" className="rounded-full w-full h-12 text-base font-bold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                  <Send className="w-4 h-4 mr-2" /> Send Message
+                <Button type="submit" size="lg" disabled={isSubmitting} className="rounded-full w-full h-12 text-base font-bold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                  <Send className="w-4 h-4 mr-2" /> {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
 

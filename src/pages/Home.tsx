@@ -44,9 +44,9 @@ const Home = () => {
             <span className="font-body text-sm text-primary-foreground/90 tracking-wider font-medium">Botanical Garden & Plant Shop</span>
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold text-primary-foreground leading-[1.05] tracking-tight mb-6 animate-slide-up">
-            Where Nature
+            Bring Nature
             <br />
-            <span className="italic font-light text-secondary">Meets You</span>
+            <span className="italic font-light text-secondary">Home</span>
           </h1>
           <p className="font-body text-lg sm:text-xl text-primary-foreground/75 max-w-xl mx-auto mb-12 leading-relaxed animate-fade-in" style={{ animationDelay: "0.3s" }}>
             Discover the beauty of over 500 plant species. Visit our garden, shop your favorites, and bring nature home.

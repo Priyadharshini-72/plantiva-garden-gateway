@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const contactInfo = [
   { icon: MapPin, label: "Address", value: "123 Garden Lane, Green Valley, Bengaluru 560001" },
@@ -17,22 +18,55 @@ const Contact = () => {
   const heroRef = useScrollAnimation();
   const ref = useScrollAnimation();
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", artworkType: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [subscribe, setSubscribe] = useState(false);
   const [subscribeEmail, setSubscribeEmail] = useState("");
   const [showSubscribeForm, setShowSubscribeForm] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const SERVICE_ID = "service_spc8739";
+  const ADMIN_TEMPLATE_ID = "template_ub95iyg";
+  const USER_TEMPLATE_ID = "template_1nwxk99";
+  const PUBLIC_KEY = "dZCiJoR3JdD0exoZl";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (form.name && form.email) {
+    if (!form.name || !form.email) return;
+
+    setIsSubmitting(true);
+
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      artworkType: form.artworkType,
+      message: form.message,
+    };
+
+    try {
+      // Send admin notification email
+      await emailjs.send(SERVICE_ID, ADMIN_TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+      // Send auto-reply to user
+      await emailjs.send(SERVICE_ID, USER_TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
       toast({
         title: subscribe ? "Message Sent & Subscribed!" : "Message Sent!",
         description: subscribe
-          ? "Thank you for reaching out and subscribing to Plantiva updates 🌿"
-          : "Thank you for reaching out. We'll get back to you soon 🌿",
+          ? "Thank you for reaching out and subscribing to updates 🎨"
+          : "Thank you for reaching out. We'll get back to you within 24–48 hours 🎨",
       });
-      setForm({ name: "", email: "", message: "" });
+
+      setForm({ name: "", email: "", artworkType: "", message: "" });
       setSubscribe(false);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -92,6 +126,16 @@ const Contact = () => {
                   />
                 </div>
                 <div>
+                  <label className="font-body text-sm font-bold text-foreground mb-1.5 block">Artwork Type</label>
+                  <Input
+                    type="text"
+                    placeholder="e.g., Portrait, Landscape, Abstract"
+                    value={form.artworkType}
+                    onChange={(e) => setForm({ ...form, artworkType: e.target.value })}
+                    className="rounded-xl h-12 px-4 bg-background border-border focus:border-primary transition-colors"
+                  />
+                </div>
+                <div>
                   <label className="font-body text-sm font-bold text-foreground mb-1.5 block">Your Message</label>
                   <Textarea
                     placeholder="Tell us about your query, feedback, or what plants you're looking for..."
@@ -111,8 +155,8 @@ const Contact = () => {
                     Subscribe to receive updates about new plants, offers & gardening tips
                   </span>
                 </label>
-                <Button type="submit" size="lg" className="rounded-full w-full h-12 text-base font-bold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                  <Send className="w-4 h-4 mr-2" /> Send Message
+                <Button type="submit" size="lg" disabled={isSubmitting} className="rounded-full w-full h-12 text-base font-bold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                  <Send className="w-4 h-4 mr-2" /> {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
 

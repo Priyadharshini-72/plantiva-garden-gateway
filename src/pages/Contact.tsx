@@ -56,7 +56,7 @@ const Contact = () => {
           : "Thank you for reaching out. We'll get back to you within 24–48 hours 🎨",
       });
 
-      setForm({ name: "", email: "", artworkType: "", message: "" });
+      setForm({ name: "", email: "", plantType: "", message: "" });
       setSubscribe(false);
     } catch (error) {
       console.error("EmailJS Error:", error);

@@ -18,7 +18,7 @@ const Contact = () => {
   const heroRef = useScrollAnimation();
   const ref = useScrollAnimation();
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", artworkType: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", plantType: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [subscribe, setSubscribe] = useState(false);
   const [subscribeEmail, setSubscribeEmail] = useState("");

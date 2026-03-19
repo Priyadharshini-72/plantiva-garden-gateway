@@ -18,7 +18,7 @@ const Contact = () => {
   const heroRef = useScrollAnimation();
   const ref = useScrollAnimation();
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", artworkType: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", plantType: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [subscribe, setSubscribe] = useState(false);
   const [subscribeEmail, setSubscribeEmail] = useState("");
@@ -38,7 +38,7 @@ const Contact = () => {
     const templateParams = {
       name: form.name,
       email: form.email,
-      artworkType: form.artworkType,
+      plantType: form.plantType,
       message: form.message,
     };
 
@@ -56,7 +56,7 @@ const Contact = () => {
           : "Thank you for reaching out. We'll get back to you within 24–48 hours 🎨",
       });
 
-      setForm({ name: "", email: "", artworkType: "", message: "" });
+      setForm({ name: "", email: "", plantType: "", message: "" });
       setSubscribe(false);
     } catch (error) {
       console.error("EmailJS Error:", error);
@@ -126,12 +126,12 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="font-body text-sm font-bold text-foreground mb-1.5 block">Artwork Type</label>
+                  <label className="font-body text-sm font-bold text-foreground mb-1.5 block">Plant Type</label>
                   <Input
                     type="text"
-                    placeholder="e.g., Portrait, Landscape, Abstract"
-                    value={form.artworkType}
-                    onChange={(e) => setForm({ ...form, artworkType: e.target.value })}
+                    placeholder="e.g., Indoor, Outdoor, Medicinal, Ornamental"
+                    value={form.plantType}
+                    onChange={(e) => setForm({ ...form, plantType: e.target.value })}
                     className="rounded-xl h-12 px-4 bg-background border-border focus:border-primary transition-colors"
                   />
                 </div>

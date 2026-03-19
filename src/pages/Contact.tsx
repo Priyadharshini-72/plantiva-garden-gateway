@@ -126,6 +126,16 @@ const Contact = () => {
                   />
                 </div>
                 <div>
+                  <label className="font-body text-sm font-bold text-foreground mb-1.5 block">Artwork Type</label>
+                  <Input
+                    type="text"
+                    placeholder="e.g., Portrait, Landscape, Abstract"
+                    value={form.artworkType}
+                    onChange={(e) => setForm({ ...form, artworkType: e.target.value })}
+                    className="rounded-xl h-12 px-4 bg-background border-border focus:border-primary transition-colors"
+                  />
+                </div>
+                <div>
                   <label className="font-body text-sm font-bold text-foreground mb-1.5 block">Your Message</label>
                   <Textarea
                     placeholder="Tell us about your query, feedback, or what plants you're looking for..."
